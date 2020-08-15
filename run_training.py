@@ -52,8 +52,8 @@ def run(dataset, data_dir, result_dir, config_id, num_gpus, total_kimg, gamma, m
     train.image_snapshot_ticks = train.network_snapshot_ticks = 100
     train.resume_pkl = "stylegan2-ffhq-config-f.pkl"
     train.resume_kimg = 24000.0
-    sched.G_lrate_base = sched.D_lrate_base = 0.0002
-    sched.minibatch_size_base = 32
+    sched.G_lrate_base = sched.D_lrate_base = 0.0001 # Default 0.002
+    sched.minibatch_size_base = 64
     sched.minibatch_gpu_base = 4
     D_loss.gamma = 10
     metrics = [metric_defaults[x] for x in metrics]
